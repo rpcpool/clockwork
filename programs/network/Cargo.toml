@@ -1,5 +1,5 @@
 [package]
-name = "clockwork-network-program"
+name = "mclockwork-network-program"
 version = "2.0.19"
 description = "Clockwork networking protocol"
 edition = "2021"
@@ -12,7 +12,7 @@ keywords = ["solana"]
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "clockwork_network_program"
+name = "mclockwork_network_program"
 
 [features]
 no-entrypoint = []
