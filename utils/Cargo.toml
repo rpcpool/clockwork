@@ -1,5 +1,5 @@
 [package]
-name = "clockwork-utils"
+name = "mclockwork-utils"
 version = "2.0.19"
 description = "Tools for building blocks on Solana"
 edition = "2021"
@@ -11,7 +11,7 @@ readme = "./README.md"
 keywords = ["solana"]
 
 [lib]
-name = "clockwork_utils"
+name = "mclockwork_utils"
 
 [dependencies]
 anchor-lang = "0.28.0"
