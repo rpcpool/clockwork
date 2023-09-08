@@ -1,5 +1,5 @@
 [package]
-name = "mclockwork-sdk"
+name = "clockwork-sdk"
 version = "2.0.19"
 description = "An SDK for building automated programs on Solana"
 edition = "2021"
@@ -11,7 +11,7 @@ readme = "./README.md"
 keywords = ["solana"]
 
 [lib]
-name = "mclockwork_sdk"
+name = "clockwork_sdk"
 
 [dependencies]
 anchor-lang = "0.28.0"

@@ -1379,6 +1379,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "clockwork-sdk"
+version = "2.0.19"
+dependencies = [
+ "anchor-lang",
+ "chrono",
+ "clockwork-thread-program",
+ "nom",
+ "once_cell",
+]
+
+[[package]]
 name = "clockwork-thread-program"
 version = "2.0.19"
 dependencies = [
@@ -2862,17 +2873,6 @@ name = "matches"
 version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2532096657941c2fea9c289d370a250971c689d4f143798ff67113ec042024a5"
-
-[[package]]
-name = "mclockwork-sdk"
-version = "2.0.19"
-dependencies = [
- "anchor-lang",
- "chrono",
- "clockwork-thread-program",
- "nom",
- "once_cell",
-]
 
 [[package]]
 name = "memchr"

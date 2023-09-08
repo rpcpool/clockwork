@@ -1,5 +1,5 @@
 [package]
-name = "mclockwork-thread-program"
+name = "clockwork-thread-program"
 version = "2.0.19"
 description = "Clockwork thread program"
 edition = "2021"
@@ -12,7 +12,7 @@ keywords = ["solana"]
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "mclockwork_thread_program"
+name = "clockwork_thread_program"
 
 [features]
 no-entrypoint = []
