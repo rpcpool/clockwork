@@ -10,10 +10,7 @@ use solana_sdk::{
     signer::Signer,
 };
 
-use crate::{
-    cli::CliCommand,
-    errors::CliError,
-};
+use crate::{cli::CliCommand, errors::CliError};
 
 impl TryFrom<&ArgMatches> for CliCommand {
     type Error = CliError;

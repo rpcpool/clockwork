@@ -1,8 +1,8 @@
 use std::sync::Arc;
 
 use anchor_lang::{InstructionData, ToAccountMetas};
-use clockwork_thread_program::state::{VersionedThread, Trigger};
 use clockwork_network_program::state::Worker;
+use clockwork_thread_program::state::{Trigger, VersionedThread};
 use clockwork_utils::thread::PAYER_PUBKEY;
 use log::info;
 use solana_account_decoder::UiAccountEncoding;

@@ -7,9 +7,9 @@ pub struct ConfigUpdate<'info> {
     pub admin: Signer<'info>,
 
     #[account(
-        mut, 
+        mut,
         seeds = [SEED_CONFIG],
-        bump, 
+        bump,
         has_one = admin
     )]
     pub config: Account<'info, Config>,

@@ -1,6 +1,6 @@
 use {
     crate::{errors::*, state::*},
-    anchor_lang::{prelude::*,  solana_program::system_program},
+    anchor_lang::{prelude::*, solana_program::system_program},
     std::mem::size_of,
 };
 
@@ -10,7 +10,7 @@ pub struct PoolCreate<'info> {
     pub admin: Signer<'info>,
 
     #[account(
-        address = Config::pubkey(), 
+        address = Config::pubkey(),
         has_one = admin
     )]
     pub config: Account<'info, Config>,

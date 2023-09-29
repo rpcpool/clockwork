@@ -3,9 +3,9 @@ use std::mem::size_of;
 use anchor_lang::{
     prelude::*,
     solana_program::system_program,
-    system_program::{transfer, Transfer}
+    system_program::{transfer, Transfer},
 };
-use clockwork_utils::thread::{Trigger, SerializableInstruction};
+use clockwork_utils::thread::{SerializableInstruction, Trigger};
 
 use crate::state::*;
 
@@ -20,7 +20,7 @@ pub struct ThreadCreate<'info> {
     #[account()]
     pub authority: Signer<'info>,
 
-    /// The payer for account initializations. 
+    /// The payer for account initializations.
     #[account(mut)]
     pub payer: Signer<'info>,
 
@@ -39,10 +39,10 @@ pub struct ThreadCreate<'info> {
         bump,
         payer= payer,
         space = vec![
-            8, 
-            size_of::<Thread>(), 
+            8,
+            size_of::<Thread>(),
             id.len(),
-            instructions.try_to_vec()?.len(),  
+            instructions.try_to_vec()?.len(),
             trigger.try_to_vec()?.len(),
             NEXT_INSTRUCTION_SIZE,
         ].iter().sum()
@@ -50,7 +50,13 @@ pub struct ThreadCreate<'info> {
     pub thread: Account<'info, Thread>,
 }
 
-pub fn handler(ctx: Context<ThreadCreate>, amount: u64, id: Vec<u8>, instructions: Vec<SerializableInstruction>, trigger: Trigger) -> Result<()> {
+pub fn handler(
+    ctx: Context<ThreadCreate>,
+    amount: u64,
+    id: Vec<u8>,
+    instructions: Vec<SerializableInstruction>,
+    trigger: Trigger,
+) -> Result<()> {
     // Get accounts
     let authority = &ctx.accounts.authority;
     let payer = &ctx.accounts.payer;
@@ -81,7 +87,7 @@ pub fn handler(ctx: Context<ThreadCreate>, amount: u64, id: Vec<u8>, instruction
                 to: thread.to_account_info(),
             },
         ),
-        amount
+        amount,
     )?;
 
     Ok(())

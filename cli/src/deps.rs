@@ -1,31 +1,15 @@
 use {
     super::*,
-    anyhow::{
-        Context,
-        Result,
-    },
+    anyhow::{Context, Result},
     bzip2::read::BzDecoder,
     clap::crate_version,
-    indicatif::{
-        ProgressBar,
-        ProgressStyle,
-    },
-    reqwest::{
-        blocking::get,
-        Url,
-    },
+    indicatif::{ProgressBar, ProgressStyle},
+    reqwest::{blocking::get, Url},
     std::{
         ffi::OsStr,
-        fs::{
-            self,
-            copy,
-            File,
-        },
-        io::{self,},
-        path::{
-            Path,
-            PathBuf,
-        },
+        fs::{self, copy, File},
+        io::{self},
+        path::{Path, PathBuf},
     },
     tar::Archive,
 };

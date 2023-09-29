@@ -11,7 +11,6 @@ use {
     std::mem::size_of,
 };
 
-
 #[derive(Accounts)]
 pub struct WorkerCreate<'info> {
     #[account(address = anchor_spl::associated_token::ID)]
@@ -51,7 +50,7 @@ pub struct WorkerCreate<'info> {
     pub mint: Box<Account<'info, Mint>>,
 
     #[account(
-        mut, 
+        mut,
         seeds = [SEED_REGISTRY],
         bump,
         constraint = !registry.locked @ ClockworkError::RegistryLocked
@@ -89,7 +88,6 @@ pub struct WorkerCreate<'info> {
         associated_token::mint = mint,
     )]
     pub worker_tokens: Box<Account<'info, TokenAccount>>,
-
 }
 
 pub fn handler(ctx: Context<WorkerCreate>) -> Result<()> {

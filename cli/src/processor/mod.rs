@@ -16,10 +16,7 @@ use clap::ArgMatches;
 use solana_sdk::signature::read_keypair_file;
 
 use crate::{
-    client::Client,
-    cli::CliCommand,
-    config::CliConfig,
-    errors::CliError,
+    cli::CliCommand, client::Client, config::CliConfig, errors::CliError,
     processor::thread::parse_pubkey_from_id_or_address,
 };
 

@@ -1,5 +1,4 @@
 use std::{
-    any::{self, Any},
     collections::{HashMap, HashSet},
     fmt::Debug,
     sync::{
@@ -12,12 +11,12 @@ use bincode::serialize;
 use clockwork_network_program::state::{Pool, Registry, Snapshot, SnapshotFrame, Worker};
 use clockwork_thread_program::state::VersionedThread;
 use log::info;
-use solana_quic_client::{QuicConfig, QuicConnectionManager, QuicPool};
 use solana_client::{
     nonblocking::{rpc_client::RpcClient, tpu_client::TpuClient},
     rpc_config::RpcSimulateTransactionConfig,
     tpu_client::TpuClientConfig,
 };
+use solana_quic_client::{QuicConfig, QuicConnectionManager, QuicPool};
 
 use solana_geyser_plugin_interface::geyser_plugin_interface::{
     GeyserPluginError, Result as PluginResult,

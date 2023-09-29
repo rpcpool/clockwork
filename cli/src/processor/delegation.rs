@@ -1,8 +1,6 @@
 use anchor_lang::{
-    solana_program::{
-        instruction::Instruction, system_program, sysvar
-    },
-    InstructionData, AccountDeserialize, ToAccountMetas
+    solana_program::{instruction::Instruction, system_program, sysvar},
+    AccountDeserialize, InstructionData, ToAccountMetas,
 };
 use clockwork_network_program::state::{Config, Delegation, Worker};
 use spl_associated_token_account::get_associated_token_address;
@@ -41,7 +39,8 @@ pub fn create(client: &Client, worker_id: u64) -> Result<(), CliError> {
             system_program: system_program::ID,
             token_program: anchor_spl::token::ID,
             worker: worker_pubkey,
-        }.to_account_metas(Some(false)),
+        }
+        .to_account_metas(Some(false)),
         data: clockwork_network_program::instruction::DelegationCreate {}.data(),
     };
     client.send_and_confirm(&[ix], &[client.payer()]).unwrap();
@@ -76,8 +75,9 @@ pub fn deposit(
             config: Config::pubkey(),
             delegation: delegation_pubkey,
             delegation_tokens: get_associated_token_address(&delegation_pubkey, &config.mint),
-            token_program: anchor_spl::token::ID, 
-        }.to_account_metas(Some(false)),
+            token_program: anchor_spl::token::ID,
+        }
+        .to_account_metas(Some(false)),
         data: clockwork_network_program::instruction::DelegationDeposit { amount }.data(),
     };
     client.send_and_confirm(&[ix], &[client.payer()]).unwrap();
@@ -112,8 +112,9 @@ pub fn withdraw(
             config: Config::pubkey(),
             delegation: delegation_pubkey,
             delegation_tokens: get_associated_token_address(&delegation_pubkey, &config.mint),
-            token_program: anchor_spl::token::ID, 
-        }.to_account_metas(Some(false)),
+            token_program: anchor_spl::token::ID,
+        }
+        .to_account_metas(Some(false)),
         data: clockwork_network_program::instruction::DelegationWithdraw { amount }.data(),
     };
     client.send_and_confirm(&[ix], &[client.payer()]).unwrap();

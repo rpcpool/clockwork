@@ -83,9 +83,9 @@ pub enum Trigger {
     Pyth {
         /// The address of the price feed to monitor.
         price_feed: Pubkey,
-        /// The equality operator (gte or lte) used to compare prices. 
+        /// The equality operator (gte or lte) used to compare prices.
         equality: Equality,
-        /// The limit price to compare the Pyth feed to. 
+        /// The limit price to compare the Pyth feed to.
         limit: i64,
     },
 }

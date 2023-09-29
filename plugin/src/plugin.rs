@@ -86,7 +86,7 @@ impl GeyserPlugin for ClockworkPlugin {
                 rent_epoch: account_info.rent_epoch,
                 data: account_info.data,
                 write_version: account_info.write_version,
-            }
+            },
         };
         let account_pubkey = Pubkey::try_from(account_info.pubkey).unwrap();
         let event = AccountUpdateEvent::try_from(account_info);

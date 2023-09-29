@@ -2,12 +2,7 @@ use {
     crate::deps::ToTagVersion,
     clap::crate_version,
     solana_sdk::commitment_config::CommitmentConfig,
-    std::{
-        env,
-        fs,
-        path::PathBuf,
-        time::Duration,
-    },
+    std::{env, fs, path::PathBuf, time::Duration},
 };
 
 pub const DEFAULT_RPC_TIMEOUT_SECONDS: Duration = Duration::from_secs(30);
@@ -161,7 +156,11 @@ impl CliConfig {
         //     &Self::clockwork_release_archive()
         // )
         let config: CliConfig = CliConfig::load();
-        format!("{}/{}", config.active_runtime_dir().to_string(), CLOCKWORK_BIN_LOCAL)
+        format!(
+            "{}/{}",
+            config.active_runtime_dir().to_string(),
+            CLOCKWORK_BIN_LOCAL
+        )
     }
 
     pub fn clockwork_release_archive() -> String {
