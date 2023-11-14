@@ -13,8 +13,6 @@ members = [
 overflow-checks = true
 
 [patch.crates-io]
-anchor-lang = { git = "https://github.com/coral-xyz/anchor", branch = "master" }
-anchor-spl = { git = "https://github.com/coral-xyz/anchor", branch = "master", features = ["mint", "token"] }
-solana-geyser-plugin-interface = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.17-geyser-block-v3" }
-solana-program = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.17-geyser-block-v3" }
-solana-sdk = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.17-geyser-block-v3" }
+anchor-lang = { git = "https://github.com/rpcpool/anchor", branch = "clockwork-1.17" }
+anchor-spl = { git = "https://github.com/rpcpool/anchor", branch = "clockwork-1.17", features = ["mint", "token"] }
+pyth-sdk-solana = { git = "https://github.com/rpcpool/pyth-sdk-rs", branch = "clockwork-1.17" }
