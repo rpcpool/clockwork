@@ -15,6 +15,6 @@ overflow-checks = true
 [patch.crates-io]
 anchor-lang = { git = "https://github.com/coral-xyz/anchor", branch = "master" }
 anchor-spl = { git = "https://github.com/coral-xyz/anchor", branch = "master", features = ["mint", "token"] }
-solana-geyser-plugin-interface = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.17-geyser-block-v3" }
-solana-program = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.17-geyser-block-v3" }
-solana-sdk = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.17-geyser-block-v3" }
+solana-geyser-plugin-interface = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.20-geyser-block-v3" }
+solana-program = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.20-geyser-block-v3" }
+solana-sdk = { git = "https://github.com/rpcpool/solana-public.git", tag = "v1.16.20-geyser-block-v3" }
